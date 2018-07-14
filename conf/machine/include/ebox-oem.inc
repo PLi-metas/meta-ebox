@@ -23,8 +23,6 @@ DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts"
 PREFERRED_PROVIDER_virtual/kernel = "linux-ebox"
 PREFERRED_VERSION_linux-ebox = "3.12.4"
 
-GCCVERSION = "4.9%"
-
 KERNEL_IMAGETYPE = "vmlinux"
 KERNEL_OUTPUT = "${KERNEL_IMAGETYPE}"
 KERNEL_CONSOLE = "null"
