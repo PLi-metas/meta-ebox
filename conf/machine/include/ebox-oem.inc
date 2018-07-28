@@ -4,11 +4,11 @@ include conf/machine/include/build-extras.inc
 KERNEL_FILE = "kernel_cfe_auto.bin"
 ROOTFS_FILE = "root_cfe_auto.bin"
 
-MACHINE_ESSENTIAL_EXTRA_RDEPENDS = "\
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     ebox-dvb-modules-${MACHINE} \
     "
     
-MACHINE_EXTRA_RRECOMMENDS = " \
+MACHINE_EXTRA_RRECOMMENDS += "\
     gstreamer1.0-plugin-dvbmediasink \
     "
 
@@ -33,7 +33,7 @@ UBI_VOLNAME = "rootfs"
 MKUBIFS_ARGS = "-m 2048 -e 126976 -c 1024 -F"
 UBINIZE_ARGS = "-m 2048 -p 128KiB"
 
-IMAGE_CMD_ubi_prepend = " \
+IMAGE_CMD_ubi_prepend = "\
     rm -rf ${IMAGE_ROOTFS}/boot/*; \
     rm -rf ${IMAGE_ROOTFS}/tmp/*; \
     "
