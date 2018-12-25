@@ -1,2 +1,2 @@
 # meta-ebox
-EBox BSP layer for PLi's OE
+EBox BSP layer for Open Vision
