@@ -1,6 +1,8 @@
 # We know about rtc
 include conf/machine/include/build-extras.inc
 
+BOX_BRAND = "ebox"
+
 KERNEL_FILE = "kernel_cfe_auto.bin"
 ROOTFS_FILE = "root_cfe_auto.bin"
 
