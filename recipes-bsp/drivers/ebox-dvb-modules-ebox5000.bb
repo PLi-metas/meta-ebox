@@ -1,6 +1,6 @@
 require ebox-dvb-modules.inc
 
-COMPATIBLE_MACHINE = "ebox5000"
+COMPATIBLE_MACHINE = "^(ebox5000)$"
 
 SRCDATE = "20150422"
 
