@@ -55,7 +55,10 @@ IMAGE_CMD_ubi_append = "\
     rm -Rf ${IMAGEDIR}; \
     "
 
-MACHINE_FEATURES += "alsa dvbapi5 usbhost switchoff wifi 3dtv hdmicec singlecore blindscan-tbs"
+MACHINE_FEATURES += "alsa dvbapi5 usbhost switchoff wifi 3dtv hdmicec singlecore blindscan-tbs middleflash"
+
+# Broken bootloader can only flash around 100 MB
+FLASHSIZE = "96"
 
 require conf/machine/include/tune-mips32.inc
 require conf/machine/include/soc-family.inc
