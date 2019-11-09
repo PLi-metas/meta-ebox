@@ -14,3 +14,4 @@ do_install() {
     install -m 0755 ${WORKDIR}/ebox-shutdown.sh ${D}${sysconfdir}/init.d/ebox-shutdown
 }
 
+COMPATIBLE_MACHINE = "^(ebox5000|ebox5100|ebox7358|eboxlumi)$"
