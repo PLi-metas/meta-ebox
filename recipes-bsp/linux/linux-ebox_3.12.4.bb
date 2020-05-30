@@ -7,7 +7,7 @@ KV = "3.12.4"
 
 COMPATIBLE_MACHINE = "^(ebox5000|ebox5100|ebox7358|eboxlumi)$"
 
-inherit kernel machine_kernel_pr
+inherit kernel machine_kernel_pr samba_change_dialect
 
 SRCDATE = "16092014"
 SRCDATE_ebox7358 = "17072014"
