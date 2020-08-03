@@ -15,7 +15,6 @@ MACHINE_EXTRA_RRECOMMENDS += "\
     gstreamer1.0-plugin-dvbmediasink \
     "
 
-KERNEL_MODULE_AUTOLOAD += "xfs"
 
 TARGET_ARCH = "mipsel"
 DEFAULTTUNE = "mips32el"
