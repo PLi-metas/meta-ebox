@@ -1,9 +1,11 @@
 DESCRIPTION = "Linux kernel for ${MACHINE}"
 LICENSE = "GPLv2"
 SECTION = "kernel"
+LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${KV}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
+
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-KV = "3.12.4"
+KV = "${KERNELVERSION}"
 
 COMPATIBLE_MACHINE = "^(ebox5000|ebox5100|ebox7358|eboxlumi)$"
 
@@ -21,23 +23,21 @@ SRC_URI[ebox5000.sha256sum] = "944e222090f6a1cb01c1d708bf05c792d1a905472bafd4dc9
 SRC_URI[ebox7358.md5sum] = "62e9de9bf928f70a2d7d8bb2c4ae2127"
 SRC_URI[ebox7358.sha256sum] = "bd2bb7854e0bb8c5d1ba583d949b167214ff3fb96aa8b4554026aa6ab0fd7ce8"
 
-LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${KV}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
-
 SRC_URI = "http://source.mynonpublic.com/ebox/${MACHINE}-linux-${KV}_${SRCDATE}.tar.xz;name=${MACHINE} \
-    file://defconfig \
-    file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
-    file://linux-3.12.4-gcc-4.9.3-build-error-fixed.patch \
-    file://rtl8712-fix-warnings.patch \
-    file://0001-Support-TBS-USB-drivers.patch \
-    file://0001-STV-Add-PLS-support.patch \
-    file://0001-STV-Add-SNR-Signal-report-parameters.patch \
-    file://0001-stv090x-optimized-TS-sync-control.patch \
-    file://blindscan2.patch \
-    file://genksyms_fix_typeof_handling.patch \
-    file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
-    file://0003-cp1emu-do-not-use-bools-for-arithmetic.patch \
-    file://0004-makefile-disable-warnings.patch \
-    "
+	file://defconfig \
+	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
+	file://linux-3.12.4-gcc-4.9.3-build-error-fixed.patch \
+	file://rtl8712-fix-warnings.patch \
+	file://0001-Support-TBS-USB-drivers.patch \
+	file://0001-STV-Add-PLS-support.patch \
+	file://0001-STV-Add-SNR-Signal-report-parameters.patch \
+	file://0001-stv090x-optimized-TS-sync-control.patch \
+	file://blindscan2.patch \
+	file://genksyms_fix_typeof_handling.patch \
+	file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
+	file://0003-cp1emu-do-not-use-bools-for-arithmetic.patch \
+	file://0004-makefile-disable-warnings.patch \
+	"
 
 S = "${WORKDIR}/linux-${KV}"
 B = "${WORKDIR}/build"

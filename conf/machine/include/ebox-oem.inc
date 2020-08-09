@@ -1,20 +1,21 @@
 # We know about rtc
 MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
+KERNELVERSION = "3.12.4"
+
 BOX_BRAND = "ebox"
 
 KERNEL_FILE = "kernel_cfe_auto.bin"
 ROOTFS_FILE = "root_cfe_auto.bin"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-    ebox-dvb-modules-${MACHINE} \
-    ebox-shutdown \
-    "
+	ebox-dvb-modules-${MACHINE} \
+	ebox-shutdown \
+	"
     
 MACHINE_EXTRA_RRECOMMENDS += "\
-    gstreamer1.0-plugin-dvbmediasink \
-    "
-
+	gstreamer1.0-plugin-dvbmediasink \
+	"
 
 TARGET_ARCH = "mipsel"
 DEFAULTTUNE = "mips32el"
@@ -23,7 +24,7 @@ GLIBC_EXTRA_OECONF = "--with-tls --with-__thread"
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-ebox"
-PREFERRED_VERSION_linux-ebox = "3.12.4"
+PREFERRED_VERSION_linux-ebox = "${KERNELVERSION}"
 
 KERNEL_IMAGETYPE = "vmlinux"
 KERNEL_OUTPUT = "${KERNEL_IMAGETYPE}"

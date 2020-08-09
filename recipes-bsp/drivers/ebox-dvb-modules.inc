@@ -6,7 +6,7 @@ require conf/license/license-close.inc
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-KV = "3.12.4"
+KV = "${KERNELVERSION}"
 PV = "${KV}+${SRCDATE}"
 
 SRC_URI = "http://source.mynonpublic.com/ebox/ebox-dvb-modules-${MACHINE}-${KV}-${SRCDATE}.zip"
