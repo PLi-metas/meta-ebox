@@ -5,7 +5,6 @@ LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${KV}/COPYING;md5=d7810fab7487fb0aad
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-KV = "${KERNELVERSION}"
 
 COMPATIBLE_MACHINE = "^(ebox5000|ebox5100|ebox7358|eboxlumi)$"
 
