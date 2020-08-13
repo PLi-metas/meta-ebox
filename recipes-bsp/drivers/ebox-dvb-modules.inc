@@ -21,9 +21,9 @@ do_populate_sysroot() {
 }
 
 do_install() {
-    install -d ${D}${base_libdir}/modules/${KV}/extra
+    install -d ${D}${nonarch_base_libdir}/modules/${KV}/extra
     for f in *.ko; do
-        install -m 0644 ${WORKDIR}/$f ${D}${base_libdir}/modules/${KV}/extra/$f;
+        install -m 0644 ${WORKDIR}/$f ${D}${nonarch_base_libdir}/modules/${KV}/extra/$f;
     done
     install -d ${D}${sysconfdir}/modules-load.d
     for i in `ls | grep \\.ko | sed -e 's/.ko//g'`; do
@@ -31,4 +31,4 @@ do_install() {
     done
 }
 
-FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf ${base_libdir}/modules/${KV}/extra"
+FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf ${nonarch_base_libdir}/modules/${KV}/extra"
