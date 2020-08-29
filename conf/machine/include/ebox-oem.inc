@@ -11,9 +11,6 @@ ROOTFS_FILE = "root_cfe_auto.bin"
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	ebox-dvb-modules-${MACHINE} \
 	ebox-shutdown \
-	"
-    
-MACHINE_EXTRA_RRECOMMENDS += "\
 	gstreamer1.0-plugin-dvbmediasink \
 	"
 
