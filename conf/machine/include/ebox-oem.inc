@@ -33,22 +33,22 @@ MKUBIFS_ARGS = "-m 2048 -e 126976 -c 1024 -F"
 UBINIZE_ARGS = "-m 2048 -p 128KiB"
 
 IMAGE_CMD_ubi_prepend = "\
-    rm -rf ${IMAGE_ROOTFS}/boot/*; \
-    rm -rf ${IMAGE_ROOTFS}/tmp/*; \
-    "
+	rm -rf ${IMAGE_ROOTFS}/boot/*; \
+	rm -rf ${IMAGE_ROOTFS}/tmp/*; \
+	"
 
 IMAGE_CMD_ubi_append = " \
-    mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
-    mv ${IMGDEPLOYDIR}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ubi ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/root_cfe_auto.bin; \
-    gzip -9c ${DEPLOY_DIR_IMAGE}/vmlinux-${MACHINE}.bin > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/kernel_cfe_auto.bin; \
-    echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
-    rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
-    cd ${DEPLOY_DIR_IMAGE}; \
-    zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/*; \
-    rm -f ${DEPLOY_DIR_IMAGE}/*.ubi; \
-    rm -f ${DEPLOY_DIR_IMAGE}/*.ubifs; \
-    rm -Rf ${IMAGEDIR}; \
-    "
+	mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
+	mv ${IMGDEPLOYDIR}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ubi ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/root_cfe_auto.bin; \
+	gzip -9c ${DEPLOY_DIR_IMAGE}/vmlinux-${MACHINE}.bin > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/kernel_cfe_auto.bin; \
+	echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
+	rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
+	cd ${DEPLOY_DIR_IMAGE}; \
+	zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/*; \
+	rm -f ${DEPLOY_DIR_IMAGE}/*.ubi; \
+	rm -f ${DEPLOY_DIR_IMAGE}/*.ubifs; \
+	rm -Rf ${IMAGEDIR}; \
+	"
 
 MACHINE_FEATURES += "alsa dvbapi5 usbhost switchoff hdmicec blindscan-tbs HDMI RCA"
 
