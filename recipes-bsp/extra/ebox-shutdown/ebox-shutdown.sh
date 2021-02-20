@@ -1,4 +1,4 @@
 #!/bin/sh
 
-echo "1"  > /proc/shutdown
+echo "1" > /proc/shutdown
 
